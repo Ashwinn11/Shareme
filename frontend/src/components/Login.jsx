@@ -6,9 +6,9 @@ import shareVideo from "../assets/share.mp4";
 import logo from "../assets/logowhite.png";
 
 const Login = () => {
-  const responseGoogle = (response)=>{
+  const responseGoogle = (response) => {
     console.log(response);
-  }
+  };
   return (
     <div className="flex justify-start items-center flex-col h-screen">
       <div className="relative w-full h-full">
@@ -27,7 +27,6 @@ const Login = () => {
           </div>
           <div className="shadow-2xl">
             <GoogleLogin
-              
               render={(renderProps) => (
                 <button
                   type="button"
@@ -40,7 +39,7 @@ const Login = () => {
               )}
               onSuccess={responseGoogle}
               onFailure={responseGoogle}
-              cookiePolicy='single-host-origin'
+              cookiePolicy="single-host-origin"
             />
           </div>
         </div>

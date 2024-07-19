@@ -6,6 +6,7 @@ import shareVideo from "../assets/share.mp4";
 import logo from "../assets/logowhite.png";
 
 const Login = () => {
+  const navigate = useNavigate();
   const responseGoogle = (response) => {
     console.log(response);
   };
@@ -22,8 +23,8 @@ const Login = () => {
           className="w-full h-full object-cover"
         />
         <div className="absolute flex flex-col justify-center items-center top-0 right-0 left-0 bottom-0 bg-blackOverlay">
-          <div className="p-5" width="130px" alt="logo">
-            <img src={logo}></img>
+          <div className="p-5">
+            <img src={logo} width="130px" alt="logo"></img>
           </div>
           <div className="shadow-2xl">
             <GoogleLogin
@@ -38,8 +39,12 @@ const Login = () => {
                 </button>
               )}
               onSuccess={responseGoogle}
-              onFailure={responseGoogle}
-              cookiePolicy="single-host-origin"
+              onError={
+                (error)=>{
+                  console.log(error);
+                }
+              }
+              cookiePolicy="single_host_origin"
             />
           </div>
         </div>

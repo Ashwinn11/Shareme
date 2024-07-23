@@ -50,7 +50,7 @@ const Login = () => {
               onClick={()=>googleResponse()}
             >
               <FcGoogle className="mr-4" />
-              Sign in with google
+              Sign in with Google
             </button>
           </div>
         </div>
